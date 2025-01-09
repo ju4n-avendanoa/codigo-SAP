@@ -160,6 +160,7 @@ SELECT
     T1."Quantity" * (-1) as "Cantidad",
     T1."LineTotal" * (-1) as "Total",
     T5."U_NAME"
+
 FROM ORIN T0 
 INNER JOIN RIN1 T1 ON T0."DocEntry" = T1."DocEntry" 
 INNER JOIN OSLP T2 ON T0."SlpCode" = T2."SlpCode"
@@ -167,4 +168,4 @@ INNER JOIN OCRD T3 ON T0."CardCode" = T3."CardCode"
 INNER JOIN OITM T4 ON T1."ItemCode" = T4."ItemCode"
 INNER JOIN OUSR T5 ON T0."UserSign" = T5."USERID"
 
-WHERE T0."DocDate" >= [%0]
+WHERE T0."DocDate" >= [%0] AND T0."DocType" = 'I' AND T1."BaseType" <> 16 
