@@ -70,8 +70,8 @@ SELECT
     T4."U_Nmarca" AS "Marca",    
     T4."U_Nfabricante" AS "Fabricante",
     T1."Dscription" AS "Descripción",
-    T1."Quantity" as "Cantidad",
-    T1."LineTotal" as "Total",
+    T1."Quantity" AS "Cantidad",
+    T1."LineTotal" AS "Total",
     T5."U_NAME"
 
 FROM OINV T0

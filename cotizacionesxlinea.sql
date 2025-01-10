@@ -9,8 +9,8 @@ SELECT
     T2."ItemName", 
     T2."ItmsGrpCod", 
     T1."Quantity", 
+    T0."DocTotal", 
     T1."LineTotal" AS "Total",
-    T1."DocTotal", 
     T3."SlpName" AS "Asesor", 
     T4."U_NAME",
     CASE
