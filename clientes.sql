@@ -1,0 +1,26 @@
+SELECT
+    T0."CardCode",
+    T0."CardName",
+    T0."Address",
+    T0."Phone1",
+    T0."Phone2",
+    T0."CntctPrsn",
+    T0."Balance",
+    T0."CreditLine",
+    T0."DebtLine",
+    T0."SlpCode",
+    T0."Cellular",
+    T0."E_Mail",
+    T0."County",
+    T0."CreateDate",
+    T0."validFrom",
+    T0."State",
+    T0."Password",
+    T0."U_BPCO_City",
+    T0."U_vendedor1",
+    T0."U_Vendedor2",
+    T0."U_Vendedor3",
+    T0."U_Vendedor4",
+    T0."U_BPCO_CS"
+FROM
+    OCRD T0
