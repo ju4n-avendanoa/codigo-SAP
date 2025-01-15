@@ -1,5 +1,4 @@
 SELECT     
-    YEAR(T0."DocDate") AS "Year",
     T0."DocDate",
     T0."DocNum",
     CASE        
@@ -10,35 +9,66 @@ SELECT
     T0."NumAtCard" AS "Ecommerce",
     CASE
         WHEN T4."ItmsGrpCod" = 100 THEN 'Artículos'        
-        WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración IM'
-        WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes IM'        
-        WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte IM'        
-        WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje IM'        
-        WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas IM'        
-        WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos) IM'        
-        WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo IM'        
-        WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión IM'        
+        WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración'
+        WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes'        
+        WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte'        
+        WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje'        
+        WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas'        
+        WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos)'        
+        WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo'        
+        WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión'        
         WHEN T4."ItmsGrpCod" = 109 THEN 'Mangueras'        
-        WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados) IM'        
-        WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados) IM'        
-        WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos IM'        
-        WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración CL'        
-        WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes CL'        
-        WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte CL'        
-        WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje CL'        
-        WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas CL'        
-        WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos) CL'        
-        WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión CL'        
-        WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados) CL'        
-        WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados) CL'        
+        WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados)'        
+        WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados)'        
+        WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos'        
+        WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración'        
+        WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes'        
+        WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte'        
+        WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje'        
+        WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas'        
+        WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos)'        
+        WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión'        
+        WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados)'        
+        WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados)'        
         WHEN T4."ItmsGrpCod" = 122 THEN 'Fletes'        
-        WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores IM'        
-        WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores CL'        
+        WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores'        
+        WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores'        
         WHEN T4."ItmsGrpCod" = 125 THEN 'Servicios'        
         WHEN T4."ItmsGrpCod" = 126 THEN 'Gastos viaje PQMQ'        
         WHEN T4."ItmsGrpCod" = 132 THEN 'Costos de importación'        
         WHEN T4."ItmsGrpCod" = 133 THEN 'Depósito contenedor'    
     END AS "Grupo de artículo",
+    -- CASE
+    --     WHEN T4."ItmsGrpCod" = 100 THEN 'Artículos'        
+    --     WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración IM'
+    --     WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes IM'        
+    --     WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte IM'        
+    --     WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje IM'        
+    --     WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas IM'        
+    --     WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos) IM'        
+    --     WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo IM'        
+    --     WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión IM'        
+    --     WHEN T4."ItmsGrpCod" = 109 THEN 'Mangueras'        
+    --     WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados) IM'        
+    --     WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados) IM'        
+    --     WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos IM'        
+    --     WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración CL'        
+    --     WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes CL'        
+    --     WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte CL'        
+    --     WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje CL'        
+    --     WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas CL'        
+    --     WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos) CL'        
+    --     WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión CL'        
+    --     WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados) CL'        
+    --     WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados) CL'        
+    --     WHEN T4."ItmsGrpCod" = 122 THEN 'Fletes'        
+    --     WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores IM'        
+    --     WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores CL'        
+    --     WHEN T4."ItmsGrpCod" = 125 THEN 'Servicios'        
+    --     WHEN T4."ItmsGrpCod" = 126 THEN 'Gastos viaje PQMQ'        
+    --     WHEN T4."ItmsGrpCod" = 132 THEN 'Costos de importación'        
+    --     WHEN T4."ItmsGrpCod" = 133 THEN 'Depósito contenedor'    
+    -- END AS "Grupo de artículo",
     T0."CardCode" AS "NIT",    
     T0."CardName",
     CASE        
@@ -70,8 +100,9 @@ SELECT
     T4."U_Nmarca" AS "Marca",    
     T4."U_Nfabricante" AS "Fabricante",
     T1."Dscription" AS "Descripción",
-    T1."Quantity" AS "Cantidad",
-    T1."LineTotal" AS "Total",
+    T6."AvgPrice" AS "Costo",
+    T1."Quantity" as "Cantidad",
+    T1."LineTotal" as "Total",
     T5."U_NAME"
 
 FROM OINV T0
@@ -80,13 +111,13 @@ INNER JOIN OSLP T2 ON T0."SlpCode" = T2."SlpCode"
 INNER JOIN OCRD T3 ON T0."CardCode" = T3."CardCode"
 INNER JOIN OITM T4 ON T1."ItemCode" = T4."ItemCode"
 INNER JOIN OUSR T5 ON T0."UserSign" = T5."USERID"
+INNER JOIN OITM T6 ON T1."ItemCode" = T6."ItemCode"
 
-WHERE T0."DocDate" >= [%0]
+WHERE T0."DocDate" >= [%0] AND T0."DocDate" <= [%1]
 
 UNION ALL
 
 SELECT
-    YEAR(T0."DocDate") AS "Year",
     T0."DocDate",
     T0."DocNum",
     CASE        
@@ -95,32 +126,63 @@ SELECT
     END AS "Tipo de pago",
     'Nota crédito' AS "Tipo documento",
     T0."NumAtCard" AS "Ecommerce",
+    -- CASE
+    --     WHEN T4."ItmsGrpCod" = 100 THEN 'Artículos'        
+    --     WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración IM'
+    --     WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes IM'        
+    --     WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte IM'        
+    --     WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje IM'        
+    --     WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas IM'        
+    --     WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos) IM'        
+    --     WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo IM'        
+    --     WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión IM'        
+    --     WHEN T4."ItmsGrpCod" = 109 THEN 'Mangueras'        
+    --     WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados) IM'        
+    --     WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados) IM'        
+    --     WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos IM'        
+    --     WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración CL'        
+    --     WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes CL'        
+    --     WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte CL'        
+    --     WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje CL'        
+    --     WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas CL'        
+    --     WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos) CL'        
+    --     WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión CL'        
+    --     WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados) CL'        
+    --     WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados) CL'        
+    --     WHEN T4."ItmsGrpCod" = 122 THEN 'Fletes'        
+    --     WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores IM'        
+    --     WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores CL'        
+    --     WHEN T4."ItmsGrpCod" = 125 THEN 'Servicios'        
+    --     WHEN T4."ItmsGrpCod" = 126 THEN 'Gastos viaje PQMQ'        
+    --     WHEN T4."ItmsGrpCod" = 132 THEN 'Costos de importación'        
+    --     WHEN T4."ItmsGrpCod" = 133 THEN 'Depósito contenedor'    
+    -- END AS "Grupo de artículo",
     CASE
         WHEN T4."ItmsGrpCod" = 100 THEN 'Artículos'        
-        WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración IM'
-        WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes IM'        
-        WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte IM'        
-        WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje IM'        
-        WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas IM'        
-        WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos) IM'        
-        WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo IM'        
-        WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión IM'        
+        WHEN T4."ItmsGrpCod" = 101 THEN 'Filtración'
+        WHEN T4."ItmsGrpCod" = 102 THEN 'Lubricantes'        
+        WHEN T4."ItmsGrpCod" = 103 THEN 'Herramientas de corte'        
+        WHEN T4."ItmsGrpCod" = 104 THEN 'Tren de rodaje'        
+        WHEN T4."ItmsGrpCod" = 105 THEN 'Llantas'        
+        WHEN T4."ItmsGrpCod" = 106 THEN 'Motor Diesel (repuestos)'        
+        WHEN T4."ItmsGrpCod" = 107 THEN 'Motor Diesel completo'        
+        WHEN T4."ItmsGrpCod" = 108 THEN 'Hidráulico / Transmisión'        
         WHEN T4."ItmsGrpCod" = 109 THEN 'Mangueras'        
-        WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados) IM'        
-        WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados) IM'        
-        WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos IM'        
-        WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración CL'        
-        WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes CL'        
-        WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte CL'        
-        WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje CL'        
-        WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas CL'        
-        WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos) CL'        
-        WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión CL'        
-        WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados) CL'        
-        WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados) CL'        
+        WHEN T4."ItmsGrpCod" = 110 THEN 'Misceláneos (representados)'        
+        WHEN T4."ItmsGrpCod" = 111 THEN 'Misceláneos (no representados)'        
+        WHEN T4."ItmsGrpCod" = 112 THEN 'Martillos'        
+        WHEN T4."ItmsGrpCod" = 113 THEN 'Filtración'        
+        WHEN T4."ItmsGrpCod" = 114 THEN 'Lubricantes'        
+        WHEN T4."ItmsGrpCod" = 115 THEN 'Herramientas de corte'        
+        WHEN T4."ItmsGrpCod" = 116 THEN 'Tren de rodaje'        
+        WHEN T4."ItmsGrpCod" = 117 THEN 'Llantas'        
+        WHEN T4."ItmsGrpCod" = 118 THEN 'Motor Diesel (repuestos)'        
+        WHEN T4."ItmsGrpCod" = 119 THEN 'Hidráulico / Transmisión'        
+        WHEN T4."ItmsGrpCod" = 120 THEN 'Misceláneos (representados)'        
+        WHEN T4."ItmsGrpCod" = 121 THEN 'Misceláneos (no representados)'        
         WHEN T4."ItmsGrpCod" = 122 THEN 'Fletes'        
-        WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores IM'        
-        WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores CL'        
+        WHEN T4."ItmsGrpCod" = 123 THEN 'Componentes mayores'        
+        WHEN T4."ItmsGrpCod" = 124 THEN 'Componentes mayores'        
         WHEN T4."ItmsGrpCod" = 125 THEN 'Servicios'        
         WHEN T4."ItmsGrpCod" = 126 THEN 'Gastos viaje PQMQ'        
         WHEN T4."ItmsGrpCod" = 132 THEN 'Costos de importación'        
@@ -128,6 +190,7 @@ SELECT
     END AS "Grupo de artículo",
     T0."CardCode" AS "NIT",    
     T0."CardName",
+    T0."LineTotal",
     CASE        
         WHEN T3."GroupCode" = 100 THEN 'Contratistas'        
         WHEN T3."GroupCode" = 102 THEN 'Sector oficial'        
@@ -157,8 +220,9 @@ SELECT
     T4."U_Nmarca" AS "Marca",    
     T4."U_Nfabricante" AS "Fabricante",
     T1."Dscription" AS "Descripción",
-    T1."Quantity" * (-1) as "Cantidad",
-    T1."LineTotal" * (-1) as "Total",
+    T6."AvgPrice" * (-1) AS "Costo",
+    T1."Quantity" * (-1) AS "Cantidad",
+    T1."LineTotal" * (-1) AS "Total",
     T5."U_NAME"
 
 FROM ORIN T0 
@@ -167,5 +231,6 @@ INNER JOIN OSLP T2 ON T0."SlpCode" = T2."SlpCode"
 INNER JOIN OCRD T3 ON T0."CardCode" = T3."CardCode"
 INNER JOIN OITM T4 ON T1."ItemCode" = T4."ItemCode"
 INNER JOIN OUSR T5 ON T0."UserSign" = T5."USERID"
+INNER JOIN OITM T6 ON T1."ItemCode" = T6."ItemCode"
 
-WHERE T0."DocDate" >= [%0] AND T0."DocType" = 'I' AND T1."BaseType" <> 16 
+WHERE T0."DocDate" >= [%0] AND T0."DocDate" <= [%1] AND T0."DocType" = 'I' AND T1."BaseType" <> 16
