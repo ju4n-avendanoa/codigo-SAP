@@ -5,6 +5,7 @@ SELECT DISTINCT
     T0."Address",
     T0."City",
     T3."Name" AS "Municipio",
+    T4."FirstName" || ' ' || T4."MiddleName" || ' ' || T4."LastName" AS "Persona contacto",
     T0."Phone1",
     T0."Phone2",
     T0."Cellular",
@@ -17,6 +18,7 @@ FROM
     INNER JOIN CRD1 T1 ON T0."CardCode" = T1."CardCode"
     INNER JOIN OSLP T2 ON T0."SlpCode" = T2."SlpCode"
     LEFT JOIN "BD_PARTEQUIPOS_PRO"."@BPCO_MU" T3 ON T3."Code" = T0."U_BPCO_CS"
+    LEFT JOIN OCPR T4 ON T0."CardCode" = T4."CardCode"
 WHERE
     T0."validFor" = 'Y'
     AND T0."CardType" = 'C'

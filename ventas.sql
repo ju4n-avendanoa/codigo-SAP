@@ -100,8 +100,8 @@ SELECT
     T4."U_Nmarca" AS "Marca",    
     T4."U_Nfabricante" AS "Fabricante",
     T1."Dscription" AS "Descripción",
-    T6."AvgPrice" AS "Costo",
     T1."Quantity" as "Cantidad",
+    T1."StockPrice" * T1."Quantity" AS "Costo total",
     T1."LineTotal" as "Total",
     T5."U_NAME"
 
@@ -190,7 +190,7 @@ SELECT
     END AS "Grupo de artículo",
     T0."CardCode" AS "NIT",    
     T0."CardName",
-    T0."LineTotal",
+    T1."LineTotal",
     CASE        
         WHEN T3."GroupCode" = 100 THEN 'Contratistas'        
         WHEN T3."GroupCode" = 102 THEN 'Sector oficial'        
@@ -220,8 +220,8 @@ SELECT
     T4."U_Nmarca" AS "Marca",    
     T4."U_Nfabricante" AS "Fabricante",
     T1."Dscription" AS "Descripción",
-    T6."AvgPrice" * (-1) AS "Costo",
     T1."Quantity" * (-1) AS "Cantidad",
+    (T1."StockPrice" * T1."Quantity") * -1 AS "Costo total",
     T1."LineTotal" * (-1) AS "Total",
     T5."U_NAME"
 
