@@ -1,7 +1,7 @@
 SELECT DISTINCT
-    T1."DocNum",
+    T1."DocNum" AS "Número de documento",
     T0."BaseRef",
-    T1."DocDate",
+    T1."DocDate" AS "Fecha de contabilización",
     T1."CardCode" AS "NIT",
     T1."CardName" AS "Cliente",
     CASE
@@ -23,9 +23,8 @@ SELECT DISTINCT
     T1."Comments",
     T2."SlpName" AS "Asesor"
 FROM
-    RIN1 T0
-    INNER JOIN ORIN T1 ON T0."DocEntry" = T1."DocEntry"
-    INNER JOIN OSLP T2 ON T0."SlpCode" = T2."SlpCode"
-
+    "BD_PARTEQUIPOS_PRO".RIN1 T0
+    INNER JOIN "BD_PARTEQUIPOS_PRO".ORIN T1 ON T0."DocEntry" = T1."DocEntry"
+    INNER JOIN "BD_PARTEQUIPOS_PRO".OSLP T2 ON T0."SlpCode" = T2."SlpCode"
 WHERE 
-    T1."DocDate" >= [%0]
+    T1."DocDate" >= '2025-01-01'
