@@ -27,7 +27,13 @@ SELECT DISTINCT
     T0."Cellular" AS "Celular",
     T0."E_Mail" AS "Correo electrónico",
     T2."SlpName" AS "Asesor",
-    T0."U_vendedor1" AS "Vendedor 1"
+    T0."U_vendedor1" AS "Vendedor 1",
+    T0."U_vendedor2" AS "Vendedor 2",
+    T0."U_vendedor3" AS "Vendedor 3",
+    T0."U_vendedor4" AS "Vendedor 4",
+    T0."U_vendedor5" AS "Vendedor 5",
+    T0."U_vendedor6" AS "Vendedor 6",
+    T0."U_vendedor7" AS "Vendedor 7"
 FROM
     "BD_PARTEQUIPOS_PRO".OCRD T0
     INNER JOIN "BD_PARTEQUIPOS_PRO".OSLP T2 ON T0."SlpCode" = T2."SlpCode"

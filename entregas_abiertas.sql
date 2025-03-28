@@ -8,8 +8,12 @@ SELECT
     T1."Quantity" AS "Cantidad",
     T1."OpenQty" AS "Cantidad abierta restante",
     T1."LineStatus",
+    (T1."LineTotal" / T1."Quantity") AS "Precio unitario",
     T1."LineTotal" AS "Total",
-    T1."WhsCode" AS "Almacén"
+    T1."WhsCode" AS "Almacén",
+    T4."U_NAME" AS "Usuario",
+    T0."U_observaciones" AS "Observaciones"
+    T0."Comments" AS "Comentarios"
 FROM
     "BD_PARTEQUIPOS_PRO".ODLN T0
     INNER JOIN "BD_PARTEQUIPOS_PRO".DLN1 T1 ON T0."DocEntry" = T1."DocEntry"

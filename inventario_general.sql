@@ -33,21 +33,15 @@ SELECT
     WHEN T1."ItmsGrpCod" = 133 THEN 'Depósito contenedor'
     ELSE 'Otro'
   END AS "Grupo de Artículo",
-  T2."WhsCode" AS "Almacén",
-  T2."OnHand" AS "Stock Real",
-  T2."IsCommited" AS "Comprometido",
-  T2."OnOrder" AS "En Orden",
-  T2."MinStock" AS "Stock Mínimo",
-  T2."MaxStock" AS "Stock Máximo",
+  T1."OnHand" AS "Stock Real",
+  T1."IsCommited" AS "Comprometido",
+  T1."OnOrder" AS "En Orden",
   T1."U_Ntipo" AS "Tipo de Artículo",
   T1."U_Nmarca" AS "Marca",
   T1."U_Nfabricante" AS "Fabricante",
-  COALESCE(T3."CardName", 'Sin Proveedor') AS "Proveedor",
-  COALESCE(T3."Country", 'Desconocido') AS "País Proveedor",
   T1."U_Clasificacion" AS "Clasificación",
   T1."AvgPrice" AS "Costo",
-  (T1."AvgPrice" * T2."OnHand") AS "Valor en Inventario",
-  T1."CreateDate" AS "Fecha de Creación",
+  (T1."AvgPrice" * T1."OnHand") AS "Valor en Inventario",
   CASE 
     WHEN T1."U_Categoria" = 1 THEN 'Stock'
     WHEN T1."U_Categoria" = 2 THEN 'Filtracion'
@@ -65,8 +59,5 @@ SELECT
 END AS "Categoria"
 FROM
   BD_PARTEQUIPOS_PRO.OITM T1
-  LEFT JOIN BD_PARTEQUIPOS_PRO.OITW T2 ON T1."ItemCode" = T2."ItemCode"
-  LEFT JOIN BD_PARTEQUIPOS_PRO.OCRD T3 ON T1."CardCode" = T3."CardCode"
 WHERE
   T1."validFor" = 'Y' 
-  AND T1."OnHand" >= 1
